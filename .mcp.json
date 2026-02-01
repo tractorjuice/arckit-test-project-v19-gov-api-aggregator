@@ -5,8 +5,8 @@
       "args": ["-y", "@anthropic/mcp-server-microsoft-docs"]
     },
     "aws-knowledge": {
-      "type": "http",
-      "url": "https://knowledge-mcp.global.api.aws"
+      "url": "https://knowledge-mcp.global.api.aws",
+      "type": "http"
     }
   }
 }
