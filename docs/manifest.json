@@ -25,6 +25,12 @@
           "title": "Stakeholder Drivers",
           "category": "Discovery",
           "documentId": "ARC-001-STKE-v1.0"
+        },
+        {
+          "path": "projects/001-uk-government-api-aggregator/ARC-001-REQ-v1.0.md",
+          "title": "Requirements",
+          "category": "Discovery",
+          "documentId": "ARC-001-REQ-v1.0"
         }
       ],
       "diagrams": [],
