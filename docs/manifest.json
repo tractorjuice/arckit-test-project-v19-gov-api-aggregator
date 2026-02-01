@@ -31,6 +31,12 @@
           "title": "Requirements",
           "category": "Discovery",
           "documentId": "ARC-001-REQ-v1.0"
+        },
+        {
+          "path": "projects/001-uk-government-api-aggregator/ARC-001-DSCT-v1.0.md",
+          "title": "Data Source Discovery",
+          "category": "Discovery",
+          "documentId": "ARC-001-DSCT-v1.0"
         }
       ],
       "diagrams": [],
