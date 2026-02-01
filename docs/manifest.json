@@ -57,7 +57,13 @@
           "documentId": "ARC-001-AWRS-v1.0"
         }
       ],
-      "diagrams": [],
+      "diagrams": [
+        {
+          "path": "projects/001-uk-government-api-aggregator/diagrams/ARC-001-DIAG-001-v1.0.md",
+          "title": "C4 Container — API Aggregator Architecture",
+          "documentId": "ARC-001-DIAG-001-v1.0"
+        }
+      ],
       "decisions": [],
       "wardleyMaps": [],
       "dataContracts": [],
