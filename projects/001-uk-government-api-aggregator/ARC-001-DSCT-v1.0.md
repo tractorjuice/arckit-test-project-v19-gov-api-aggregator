@@ -26,6 +26,7 @@
 | Version | Date | Author | Changes | Approved By | Approval Date |
 |---------|------|--------|---------|-------------|---------------|
 | 1.0 | 2026-02-01 | ArcKit AI | Initial creation from `/arckit.datascout` command | PENDING | PENDING |
+| 1.1 | 2026-02-01 | ArcKit AI | Added Appendix C: Government APIs not listed on api.gov.uk (border, fuel, legislation, police, carbon, ONS, DfE, TfL, devolved) | PENDING | PENDING |
 
 ---
 
@@ -1350,7 +1351,191 @@ Beyond the 9 integration requirements, the api.gov.uk catalogue reveals addition
 | Other departments | Various | ~3 |
 | **TOTAL** | | **~240** |
 
-### Appendix C: Glossary
+### Appendix C: Government APIs NOT Listed on api.gov.uk
+
+The api.gov.uk catalogue (240 APIs, 34 departments) is **not exhaustive**. The catalogue relies on departments voluntarily submitting their APIs via GitHub Issues. CDDO acknowledges this gap and is exploring a federated discovery model. The following significant APIs exist outside the central catalogue:
+
+#### C.1 Border & Customs APIs (HMRC)
+
+Published on GOV.UK separately from api.gov.uk, these APIs support UK border trade:
+
+| API | Description | Auth | Status |
+|-----|-------------|------|--------|
+| **CDS (Customs Declaration Service)** | Import/export declarations replacing CHIEF | OAuth 2.0 | Active |
+| **NCTS (New Computerised Transit System)** | Transit declarations for goods moving through UK | OAuth 2.0 | Active |
+| **GVMS (Goods Vehicle Movement Service)** | Goods Movement Records for cross-border haulage | OAuth 2.0 | Active |
+| **Safety & Security Import Declarations** | Pre-arrival safety declarations | OAuth 2.0 | Active |
+
+**Reference**: https://www.gov.uk/government/publications/apis
+
+#### C.2 Fuel Finder Open Data API (DESNZ / CMA)
+
+A **brand new** statutory open data scheme launching **2 February 2026** under the Motor Fuel Price (Open Data) Regulations 2025:
+
+| Attribute | Value |
+|-----------|-------|
+| **Provider** | Department for Energy Security and Net Zero (DESNZ); aggregated by VE3 Global Ltd |
+| **Description** | Real-time fuel prices from every UK petrol station, updated within 30 minutes of any price change |
+| **Legal Basis** | Data (Use and Access) Act 2025; Motor Fuel Price (Open Data) Regulations 2025 |
+| **Data Available** | Per-station prices by fuel grade, station name, address, lat/long, trading hours, amenities |
+| **Update Frequency** | Near real-time (within 30 minutes of price change at pump) |
+| **Coverage** | UK-wide (all forecourts, mandatory) |
+| **Authentication** | To be confirmed (open data scheme — expected to be freely accessible to developers) |
+| **Enforcement** | CMA enforcement; penalties up to 1% worldwide turnover for non-compliance |
+| **Launch Date** | 2 February 2026 (stations registering from December 2025) |
+| **Access Point** | https://www.gov.uk/guidance/access-fuel-price-data |
+
+**Significance for the aggregator**: This is a major new government open data API launching imminently. It represents exactly the type of cross-department data that the API Aggregator should surface.
+
+#### C.3 Legislation API (The National Archives)
+
+| Attribute | Value |
+|-----------|-------|
+| **Provider** | The National Archives |
+| **API Endpoint** | https://www.legislation.gov.uk/developer |
+| **Description** | Consolidated UK legislation in XML, RDF, and Atom formats |
+| **Auth** | None (fully open) |
+| **License** | Open Government Licence v3.0 |
+| **Format** | XML (Legislation Schema), RDF, Atom, PDF |
+| **Status** | Active (since 2010) |
+
+#### C.4 UK Police Data API (Home Office)
+
+| Attribute | Value |
+|-----------|-------|
+| **Provider** | Home Office / data.police.uk |
+| **API Endpoint** | https://data.police.uk/docs/ |
+| **Description** | Street-level crime data, outcomes, stop and search, force/neighbourhood info |
+| **Auth** | None (15 req/s, 30 burst) |
+| **License** | Open Government Licence v3.0 |
+| **Coverage** | England, Wales, Northern Ireland police forces |
+| **Status** | Active |
+
+**Note**: Despite the Home Office showing 0 APIs on api.gov.uk, the Police Data API is one of the most used government open data services.
+
+#### C.5 Carbon Intensity API (National Energy System Operator)
+
+| Attribute | Value |
+|-----------|-------|
+| **Provider** | NESO (formerly National Grid ESO) |
+| **API Endpoint** | https://api.carbonintensity.org.uk |
+| **Description** | Regional carbon intensity of GB electricity system, 48-hour forecasts |
+| **Auth** | None (fully open) |
+| **License** | CC BY 4.0 |
+| **Status** | Active |
+
+#### C.6 ONS Developer Hub (Beta)
+
+| Attribute | Value |
+|-----------|-------|
+| **Provider** | Office for National Statistics |
+| **API Endpoint** | https://api.beta.ons.gov.uk/v1 |
+| **Description** | Programmatic access to ONS datasets (census, labour market, CPI, GDP) |
+| **Auth** | None (fully open, beta) |
+| **Documentation** | https://developer.ons.gov.uk |
+| **Status** | Beta |
+
+**Note**: api.gov.uk lists only 2 ONS APIs but the developer hub provides access to 275+ datasets.
+
+#### C.7 DfE Find and Use an API (Beta)
+
+| Attribute | Value |
+|-----------|-------|
+| **Provider** | Department for Education |
+| **API Endpoint** | https://find-and-use-an-api.education.gov.uk |
+| **Description** | DfE's own API catalogue — schools, finance, corporate data |
+| **Auth** | API Key (subscription) |
+| **Status** | Beta |
+
+**Note**: api.gov.uk lists only 4 DfE APIs; the DfE's own catalogue contains additional APIs with sandbox environments.
+
+#### C.8 GOV.UK Platform APIs (GDS)
+
+Published separately from api.gov.uk, these power the GOV.UK platform:
+
+| API | Description | Listed on api.gov.uk? |
+|-----|-------------|----------------------|
+| GOV.UK Content API | Published content in JSON | Yes |
+| GOV.UK Notify API | Email, SMS, letters to users | Yes |
+| GOV.UK Pay API | Payment processing | Yes |
+| GOV.UK Search API | Site search | Yes |
+| GOV.UK Publishing APIs (~40) | Internal publishing platform APIs | **No** |
+| GOV.UK Chat API | AI-powered Q&A (launching 2026) | **No** |
+
+**Reference**: https://docs.publishing.service.gov.uk/apis.html
+
+#### C.9 NHS Website APIs (developer.api.nhs.uk)
+
+| Attribute | Value |
+|-----------|-------|
+| **Provider** | NHS England |
+| **API Endpoint** | https://developer.api.nhs.uk |
+| **Description** | NHS website content syndication, service finder |
+| **Status** | Being migrated to digital.nhs.uk (retiring Spring 2026) |
+
+**Note**: Separate from the 93 NHS Digital APIs on api.gov.uk — these are NHS website-specific APIs.
+
+#### C.10 Transport for London Unified API
+
+| Attribute | Value |
+|-----------|-------|
+| **Provider** | Transport for London |
+| **API Endpoint** | https://api.tfl.gov.uk |
+| **Description** | Bus arrivals, Tube data, journey planner, station locations, accessibility, road disruptions |
+| **Auth** | API Key (free registration) |
+| **License** | OGL v3.0 |
+| **Documentation** | Swagger: https://api.tfl.gov.uk/swagger/ui/index.html |
+| **Status** | Active |
+
+**Note**: Listed on api.gov.uk (1 entry) but the Unified API contains dozens of sub-APIs.
+
+#### C.11 Devolved Administration APIs
+
+Equivalent services not covered by api.gov.uk:
+
+| Region | Service | API/Portal | Equivalent to |
+|--------|---------|-----------|---------------|
+| **Scotland** | SEPA Time Series API | https://timeseriesdoc.sepa.org.uk | Environment Agency flood monitoring |
+| **Scotland** | SEPA Rainfall API | https://www2.sepa.org.uk/rainfall | EA rainfall data |
+| **Scotland** | statistics.gov.scot | https://statistics.gov.scot | ONS statistics |
+| **Wales** | NRW Flood & River Levels API | https://api-portal.naturalresources.wales | EA flood monitoring |
+| **Wales** | NRW Bathing Water API | https://environment.data.gov.uk/wales/bathing-waters/ | EA bathing water |
+| **N. Ireland** | OpenDataNI Portal | https://www.opendatani.gov.uk | data.gov.uk |
+
+#### C.12 Met Office Weather DataHub (Replacement for DataPoint)
+
+| Attribute | Value |
+|-----------|-------|
+| **Provider** | Met Office |
+| **Description** | Weather forecasts, observations, map imagery |
+| **Note** | DataPoint API was **retired** in 2025; replaced by Weather DataHub (commercial, tiered pricing) |
+| **Auth** | API Key |
+| **Status** | Active (commercial) |
+
+#### Summary: Estimated Total UK Government APIs
+
+| Source | API Count |
+|--------|-----------|
+| api.gov.uk catalogue | ~240 |
+| Border/Customs APIs (HMRC) | ~8 |
+| Fuel Finder (DESNZ, launching Feb 2026) | 1 |
+| Legislation API (TNA) | 1 |
+| Police Data API (Home Office) | 1 |
+| Carbon Intensity (NESO) | 1 |
+| ONS Developer Hub (uncatalogued datasets) | ~275 datasets |
+| DfE Find and Use an API (additional) | ~10+ |
+| GOV.UK Publishing Platform (internal) | ~40 |
+| NHS Website APIs | ~5 |
+| TfL sub-APIs | ~15 |
+| Devolved administration APIs | ~10 |
+| Met Office Weather DataHub | ~5 |
+| **Estimated total UK public sector APIs** | **~400+ unique APIs** |
+
+The api.gov.uk catalogue captures roughly **60%** of publicly accessible UK Government APIs. The remainder are discoverable only through department-specific developer hubs, GOV.UK publications, or open data portals.
+
+---
+
+### Appendix D: Glossary
 
 - **API**: Application Programming Interface
 - **CDDO**: Central Digital and Data Office
