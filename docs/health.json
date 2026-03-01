@@ -1,0 +1,29 @@
+{
+  "generated": "2026-03-01T18:04:29.813Z",
+  "scanned": {
+    "projects": 1,
+    "artifacts": 8
+  },
+  "summary": {
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0,
+    "total": 0
+  },
+  "byType": {
+    "STALE-RSCH": 0,
+    "FORGOTTEN-ADR": 0,
+    "UNRESOLVED-COND": 0,
+    "STALE-EXT": 0,
+    "ORPHAN-REQ": 0,
+    "MISSING-TRACE": 0,
+    "VERSION-DRIFT": 0
+  },
+  "projects": [
+    {
+      "id": "001-uk-government-api-aggregator",
+      "artifacts": 8,
+      "findings": []
+    }
+  ]
+}
