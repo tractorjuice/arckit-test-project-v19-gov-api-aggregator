@@ -1,8 +1,8 @@
 {
-  "generated": "2026-03-13T11:49:46.875Z",
+  "generated": "2026-03-18T11:20:10.596Z",
   "scanned": {
     "projects": 1,
-    "artifacts": 9
+    "artifacts": 13
   },
   "summary": {
     "HIGH": 0,
@@ -22,7 +22,7 @@
   "projects": [
     {
       "id": "001-uk-government-api-aggregator",
-      "artifacts": 9,
+      "artifacts": 13,
       "findings": []
     }
   ]
