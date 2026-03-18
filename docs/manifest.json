@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-13T11:49:57.688Z",
+  "generated": "2026-03-18T11:18:52.926Z",
   "repository": {
     "name": "arckit-test-project-v19-gov-api-aggregator"
   },
@@ -474,6 +474,30 @@
       "status": "beta"
     },
     {
+      "path": "docs/guides/wardley-climate.md",
+      "title": "Climate Assessment Playbook",
+      "category": "Other",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/wardley-doctrine.md",
+      "title": "Doctrine Assessment Playbook",
+      "category": "Other",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/wardley-gameplay.md",
+      "title": "Gameplay Analysis Playbook",
+      "category": "Other",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/wardley-value-chain.md",
+      "title": "Value Chain Decomposition Playbook",
+      "category": "Other",
+      "status": "beta"
+    },
+    {
       "path": "docs/guides/wardley.md",
       "title": "Wardley Mapping Playbook",
       "category": "Architecture",
@@ -614,6 +638,10 @@
     "DLDR": "Architecture",
     "DATA": "Architecture",
     "WARD": "Architecture",
+    "WDOC": "Architecture",
+    "WGAM": "Architecture",
+    "WCLM": "Architecture",
+    "WVCH": "Architecture",
     "DIAG": "Architecture",
     "DFD": "Architecture",
     "ADR": "Architecture",
@@ -709,6 +737,28 @@
           "path": "projects/001-uk-government-api-aggregator/diagrams/ARC-001-DIAG-001-v1.0.md",
           "title": "Architecture Diagram: UK Government API Aggregator — C4 Container",
           "documentId": "ARC-001-DIAG-001-v1.0"
+        }
+      ],
+      "wardleyMaps": [
+        {
+          "path": "projects/001-uk-government-api-aggregator/wardley-maps/ARC-001-WCLM-001-v1.0.md",
+          "title": "Wardley Climate Assessment: UK Government API Aggregator",
+          "documentId": "ARC-001-WCLM-001-v1.0"
+        },
+        {
+          "path": "projects/001-uk-government-api-aggregator/wardley-maps/ARC-001-WDOC-v1.0.md",
+          "title": "Wardley Doctrine Assessment: UK Government API Aggregator",
+          "documentId": "ARC-001-WDOC-v1.0"
+        },
+        {
+          "path": "projects/001-uk-government-api-aggregator/wardley-maps/ARC-001-WGAM-001-v1.0.md",
+          "title": "Wardley Gameplay Analysis: UK Government API Aggregator",
+          "documentId": "ARC-001-WGAM-001-v1.0"
+        },
+        {
+          "path": "projects/001-uk-government-api-aggregator/wardley-maps/ARC-001-WVCH-001-v1.0.md",
+          "title": "Wardley Value Chain: UK Government API Aggregator",
+          "documentId": "ARC-001-WVCH-001-v1.0"
         }
       ],
       "research": [
@@ -841,6 +891,46 @@
         "severity": "MEDIUM",
         "createdDate": "2026-02-01",
         "lastModified": "2026-02-01"
+      },
+      "ARC-001-WCLM-001-v1.0": {
+        "type": "WCLM",
+        "project": "001-uk-government-api-aggregator",
+        "path": "projects/001-uk-government-api-aggregator/wardley-maps/ARC-001-WCLM-001-v1.0.md",
+        "title": "Wardley Climate Assessment: UK Government API Aggregator",
+        "status": "DRAFT",
+        "severity": "MEDIUM",
+        "createdDate": "2026-03-18",
+        "lastModified": "2026-03-18"
+      },
+      "ARC-001-WDOC-v1.0": {
+        "type": "WDOC",
+        "project": "001-uk-government-api-aggregator",
+        "path": "projects/001-uk-government-api-aggregator/wardley-maps/ARC-001-WDOC-v1.0.md",
+        "title": "Wardley Doctrine Assessment: UK Government API Aggregator",
+        "status": "DRAFT",
+        "severity": "MEDIUM",
+        "createdDate": "2026-03-18",
+        "lastModified": "2026-03-18"
+      },
+      "ARC-001-WGAM-001-v1.0": {
+        "type": "WGAM",
+        "project": "001-uk-government-api-aggregator",
+        "path": "projects/001-uk-government-api-aggregator/wardley-maps/ARC-001-WGAM-001-v1.0.md",
+        "title": "Wardley Gameplay Analysis: UK Government API Aggregator",
+        "status": "DRAFT",
+        "severity": "MEDIUM",
+        "createdDate": "2026-03-18",
+        "lastModified": "2026-03-18"
+      },
+      "ARC-001-WVCH-001-v1.0": {
+        "type": "WVCH",
+        "project": "001-uk-government-api-aggregator",
+        "path": "projects/001-uk-government-api-aggregator/wardley-maps/ARC-001-WVCH-001-v1.0.md",
+        "title": "Wardley Value Chain: UK Government API Aggregator",
+        "status": "DRAFT",
+        "severity": "MEDIUM",
+        "createdDate": "2026-03-18",
+        "lastModified": "2026-03-18"
       },
       "ARC-001-AWRS-v1.0": {
         "type": "AWRS",
@@ -1132,6 +1222,106 @@
       {
         "from": "ARC-001-DIAG-001-v1.0",
         "to": "ARC-001-AZRS",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WCLM-001-v1.0",
+        "to": "ARC-001-WVCH-001",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WCLM-001-v1.0",
+        "to": "ARC-001-WDOC",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WCLM-001-v1.0",
+        "to": "ARC-001-WGAM-001",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WCLM-001-v1.0",
+        "to": "ARC-001-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WCLM-001-v1.0",
+        "to": "ARC-001-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WCLM-001-v1.0",
+        "to": "ARC-000-PRIN",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WDOC-v1.0",
+        "to": "ARC-001-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WDOC-v1.0",
+        "to": "ARC-001-WVCH-001",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WDOC-v1.0",
+        "to": "ARC-000-PRIN",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WDOC-v1.0",
+        "to": "ARC-001-BKLG",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WDOC-v1.0",
+        "to": "ARC-001-DSCT",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WDOC-v1.0",
+        "to": "ARC-001-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WGAM-001-v1.0",
+        "to": "ARC-001-WVCH-001",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WGAM-001-v1.0",
+        "to": "ARC-001-WDOC",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WGAM-001-v1.0",
+        "to": "ARC-000-PRIN",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WGAM-001-v1.0",
+        "to": "ARC-001-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WGAM-001-v1.0",
+        "to": "ARC-001-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WVCH-001-v1.0",
+        "to": "ARC-001-REQ",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WVCH-001-v1.0",
+        "to": "ARC-001-STKE",
+        "type": "references"
+      },
+      {
+        "from": "ARC-001-WVCH-001-v1.0",
+        "to": "ARC-000-PRIN",
         "type": "references"
       }
     ]
